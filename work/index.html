@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作导航</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #8892b0;
+      font-size: 1.1em;
+    }
+
+    .date-display {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 15px 30px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .date-display .date {
+      font-size: 1.4em;
+      color: #ccd6f6;
+      font-weight: 600;
+    }
+
+    .date-display .weekday {
+      color: #667eea;
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.2em;
+      color: #ccd6f6;
+      margin-bottom: 20px;
+      padding-left: 15px;
+      border-left: 4px solid #667eea;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #667eea;
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+      background: rgba(102, 126, 234, 0.1);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-size: 1.15em;
+      font-weight: 600;
+      color: #ccd6f6;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.9em;
+      color: #8892b0;
+      line-height: 1.5;
+    }
+
+    .card-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75em;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    .tag-daily { background: rgba(79, 172, 254, 0.2); color: #4facfe; }
+    .tag-weekly { background: rgba(67, 233, 123, 0.2); color: #43e97b; }
+    .tag-monthly { background: rgba(250, 112, 154, 0.2); color: #fa709a; }
+
+    .card.daily .card-icon { background: rgba(79, 172, 254, 0.15); }
+    .card.weekly .card-icon { background: rgba(67, 233, 123, 0.15); }
+    .card.monthly .card-icon { background: rgba(250, 112, 154, 0.15); }
+
+    .status-bar {
+      margin-top: 50px;
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      text-align: center;
+      color: #8892b0;
+      font-size: 0.9em;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #5a6178;
+      font-size: 0.85em;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.8em; }
+      .container { padding: 20px 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📋 工作导航</h1>
+      <p>高效工作，从这里开始</p>
+    </div>
+
+    <div class="date-display">
+      <div class="date" id="currentDate"></div>
+      <div class="weekday" id="currentWeekday"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📅 每日工作</div>
+      <div class="card-grid">
+        <a href="http://www.adapt-center.com/" target="_blank" class="card daily">
+          <div class="card-icon">💼</div>
+          <div class="card-title">工作任务</div>
+          <div class="card-desc">点击进入工作任务系统，处理每日工作任务</div>
+          <span class="card-tag tag-daily">每日</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📆 每周任务</div>
+      <div class="card-grid">
+        <a href="https://www.kdocs.cn/l/chWHtmjON0b5?R=L1MvOQ==" target="_blank" class="card weekly">
+          <div class="card-icon">📝</div>
+          <div class="card-title">填写周报</div>
+          <div class="card-desc">每周四填写工作周报，更新工作进度</div>
+          <span class="card-tag tag-weekly">每周四</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🔐 考勤打卡</div>
+      <div class="card-grid">
+        <a href="https://portal.kylinos.cn/" target="_blank" class="card daily">
+          <div class="card-icon">✅</div>
+          <div class="card-title">打卡记录</div>
+          <div class="card-desc">查看考勤打卡记录</div>
+          <span class="card-tag tag-daily">每日</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📚 月度任务</div>
+      <div class="card-grid">
+        <a href="#" class="card monthly" onclick="alert('待补充链接'); return false;">
+          <div class="card-icon">📖</div>
+          <div class="card-title">月考计划</div>
+          <div class="card-desc">完成月度考试计划</div>
+          <span class="card-tag tag-monthly">每月</span>
+        </a>
+        <a href="#" class="card monthly" onclick="alert('待补充链接'); return false;">
+          <div class="card-icon">🗃️</div>
+          <div class="card-title">月度知识库</div>
+          <div class="card-desc">上传月度知识库文档</div>
+          <span class="card-tag tag-monthly">每月</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="status-bar" id="statusBar">
+      正在检查打卡状态...
+    </div>
+
+    <div class="footer">
+      <p>工作导航系统 · 鹏飞专属</p>
+    </div>
+  </div>
+
+  <script>
+    // 显示当前日期
+    const now = new Date();
+    const dateStr = now.getFullYear() + '年' + (now.getMonth()+1) + '月' + now.getDate() + '日';
+    const weekdays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    document.getElementById('currentDate').textContent = dateStr;
+    document.getElementById('currentWeekday').textContent = weekdays[now.getDay()];
+
+    // 检查是否是周四
+    const isThursday = now.getDay() === 4;
+    const statusBar = document.getElementById('statusBar');
+    if (isThursday) {
+      statusBar.innerHTML = '📌 今天是周四，别忘了填写周报！';
+      statusBar.style.background = 'rgba(67, 233, 123, 0.1)';
+      statusBar.style.color = '#43e97b';
+    } else {
+      const daysUntilThursday = (4 - now.getDay() + 7) % 7 || 7;
+      statusBar.innerHTML = '📅 距离本周四还有 ' + daysUntilThursday + ' 天';
+    }
+  </script>
+</body>
+</html>
