@@ -85,7 +85,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
 <header class="header">
   <h1>OpenClaw 管控台</h1>
   <div>
-    <span class="updated">最后更新: <span id="lastUpdated">2026/5/22 06:00:07</span></span>
+    <span class="updated">最后更新: <span id="lastUpdated">2026/5/26 06:00:09</span></span>
     <button class="refresh-btn" onclick="location.reload()">🔄 刷新</button>
   </div>
 </header>
@@ -105,12 +105,12 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
   <div id="tab-overview" class="tab-content active">
     <div class="stats">
       <div class="stat-card">
-        <div class="num ok">7</div>
+        <div class="num ok">3</div>
         <div class="label">正常运行</div>
         <div class="sub">共 15 个任务</div>
       </div>
       <div class="stat-card">
-        <div class="num error">8</div>
+        <div class="num error">12</div>
         <div class="label">异常任务</div>
         <div class="sub">需要关注</div>
       </div>
@@ -134,25 +134,35 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
     
     <div class="panel" style="margin-bottom: 20px; border-color: #ef444444;">
       <div class="panel-header">
-        <h2>🔴 异常任务 (8)</h2>
+        <h2>🔴 异常任务 (12)</h2>
       </div>
       <table>
         <thead><tr><th>ID</th><th>任务名</th><th>Agent</th><th>状态</th></tr></thead>
         <tbody>
           <tr>
+            <td><code>129338e0...</code></td>
+            <td>每日天气推送</td>
+            <td><span class="tag agent-tag">jiaoyi</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
+            <td><code>ba65cf47...</code></td>
+            <td>晨间简报</td>
+            <td><span class="tag agent-tag">jiaoyi</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
             <td><code>d5dbba2a...</code></td>
             <td>旧衣回收订单-0 9 * * *</td>
             <td><span class="tag agent-tag">jiaoyi</span></td>
             <td><span style="color:#ef4444">🔴 error</span></td>
           </tr><tr>
+            <td><code>fe166eb3...</code></td>
+            <td>学习计划每日提醒</td>
+            <td><span class="tag agent-tag">system</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
             <td><code>f61ba5d8...</code></td>
             <td>西瓜猪订单推送-上午</td>
             <td><span class="tag agent-tag">jiaoyi</span></td>
-            <td><span style="color:#ef4444">🔴 error</span></td>
-          </tr><tr>
-            <td><code>f7262a5f...</code></td>
-            <td>麒麟知识库FAQ每日推送</td>
-            <td><span class="tag agent-tag">system</span></td>
             <td><span style="color:#ef4444">🔴 error</span></td>
           </tr><tr>
             <td><code>f70364b0...</code></td>
@@ -165,14 +175,24 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
             <td><span class="tag agent-tag">jiaoyi</span></td>
             <td><span style="color:#ef4444">🔴 error</span></td>
           </tr><tr>
+            <td><code>9eb8f619...</code></td>
+            <td>旧衣回收订单-0 15 * * *</td>
+            <td><span class="tag agent-tag">jiaoyi</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
             <td><code>9b734da7...</code></td>
             <td>旧衣回收订单-0 18 * * *</td>
             <td><span class="tag agent-tag">jiaoyi</span></td>
             <td><span style="color:#ef4444">🔴 error</span></td>
           </tr><tr>
-            <td><code>7987d5f7...</code></td>
-            <td>晚间复盘提醒</td>
+            <td><code>f16dc359...</code></td>
+            <td>西瓜猪订单推送-下午</td>
             <td><span class="tag agent-tag">jiaoyi</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
+            <td><code>6b375240...</code></td>
+            <td>每日反思发布</td>
+            <td><span class="tag agent-tag">main</span></td>
             <td><span style="color:#ef4444">🔴 error</span></td>
           </tr><tr>
             <td><code>7363e5ef...</code></td>
@@ -197,13 +217,13 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td>每日天气推送</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">jiaoyi</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr><tr>
       <td><code>ba65cf47...</code></td>
       <td>晨间简报</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">jiaoyi</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr><tr>
       <td><code>d5dbba2a...</code></td>
       <td>旧衣回收订单-0 9 * * *</td>
@@ -215,7 +235,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td>学习计划每日提醒</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">system</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr><tr>
       <td><code>f61ba5d8...</code></td>
       <td>西瓜猪订单推送-上午</td>
@@ -227,7 +247,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td>麒麟知识库FAQ每日推送</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">system</span></td>
-      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
+      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
     </tr><tr>
       <td><code>f70364b0...</code></td>
       <td>旧衣回收订单-0 11 * * *</td>
@@ -245,7 +265,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td>旧衣回收订单-0 15 * * *</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">jiaoyi</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr><tr>
       <td><code>9b734da7...</code></td>
       <td>旧衣回收订单-0 18 * * *</td>
@@ -257,13 +277,13 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td>西瓜猪订单推送-下午</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">jiaoyi</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr><tr>
       <td><code>7987d5f7...</code></td>
       <td>晚间复盘提醒</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">jiaoyi</span></td>
-      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
+      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
     </tr><tr>
       <td><code>buer-dai...</code></td>
       <td></td>
@@ -275,7 +295,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td>每日反思发布</td>
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">main</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr><tr>
       <td><code>7363e5ef...</code></td>
       <td>CEO健康检查</td>
@@ -628,7 +648,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
             <div>📅 最近活动: <span style="color:#38bdf8;">无</span></div>
           </div>
           <div style="margin-top:12px;padding-top:12px;border-top:1px solid #334155;font-size:12px;">
-            <div style="color:#64748b;">Cron任务: <span style="color:#22c55e;">1正常</span> </div>
+            <div style="color:#64748b;">Cron任务: <span style="color:#22c55e;">0正常</span> <span style="color:#ef4444;">1异常</span></div>
           </div>
         </div><div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
@@ -698,7 +718,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
             <div>📅 最近活动: <span style="color:#38bdf8;">5/12 08:06</span></div>
           </div>
           <div style="margin-top:12px;padding-top:12px;border-top:1px solid #334155;font-size:12px;">
-            <div style="color:#64748b;">Cron任务: <span style="color:#22c55e;">4正常</span> <span style="color:#ef4444;">6异常</span></div>
+            <div style="color:#64748b;">Cron任务: <span style="color:#22c55e;">1正常</span> <span style="color:#ef4444;">9异常</span></div>
           </div>
         </div><div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
@@ -749,7 +769,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
 </div>
 
 <footer class="footer">
-  OpenClaw 管控台 · 数据来源: openclaw cron list · 生成于 2026/5/22 06:00:07
+  OpenClaw 管控台 · 数据来源: openclaw cron list · 生成于 2026/5/26 06:00:09
 </footer>
 
 <script>
