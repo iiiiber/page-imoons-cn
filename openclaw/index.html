@@ -85,7 +85,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
 <header class="header">
   <h1>OpenClaw 管控台</h1>
   <div>
-    <span class="updated">最后更新: <span id="lastUpdated">2026/5/26 23:29:46</span></span>
+    <span class="updated">最后更新: <span id="lastUpdated">2026/5/27 06:00:09</span></span>
     <button class="refresh-btn" onclick="location.reload()">🔄 刷新</button>
   </div>
 </header>
@@ -94,7 +94,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
   <button class="active" onclick="switchTab('overview')">总览</button>
   <button onclick="switchTab('cron')">定时任务 (15)</button>
   <button onclick="switchTab('skills')">技能 (106)</button>
-  <button onclick="switchTab('scripts')">脚本 (42)</button>
+  <button onclick="switchTab('scripts')">脚本 (43)</button>
   <button onclick="switchTab('projects')">项目 (20)</button>
   <button onclick="switchTab('agents')">Agent (9)</button>
 </nav>
@@ -120,7 +120,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
         <div class="sub">系统 58 + 工作区 48</div>
       </div>
       <div class="stat-card">
-        <div class="num">42</div>
+        <div class="num">43</div>
         <div class="label">脚本</div>
         <div class="sub">自动化脚本</div>
       </div>
@@ -140,16 +140,6 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
         <thead><tr><th>ID</th><th>任务名</th><th>Agent</th><th>状态</th></tr></thead>
         <tbody>
           <tr>
-            <td><code>6b375240...</code></td>
-            <td>每日反思发布</td>
-            <td><span class="tag agent-tag">main</span></td>
-            <td><span style="color:#ef4444">🔴 error</span></td>
-          </tr><tr>
-            <td><code>7363e5ef...</code></td>
-            <td>CEO健康检查</td>
-            <td><span class="tag agent-tag">ceo</span></td>
-            <td><span style="color:#ef4444">🔴 error</span></td>
-          </tr><tr>
             <td><code>d5dbba2a...</code></td>
             <td>旧衣回收订单-0 9 * * *</td>
             <td><span class="tag agent-tag">jiaoyi</span></td>
@@ -189,6 +179,16 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
             <td>晚间复盘提醒</td>
             <td><span class="tag agent-tag">jiaoyi</span></td>
             <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
+            <td><code>6b375240...</code></td>
+            <td>每日反思发布</td>
+            <td><span class="tag agent-tag">main</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
+          </tr><tr>
+            <td><code>7363e5ef...</code></td>
+            <td>CEO健康检查</td>
+            <td><span class="tag agent-tag">ceo</span></td>
+            <td><span style="color:#ef4444">🔴 error</span></td>
           </tr>
         </tbody>
       </table>
@@ -203,24 +203,6 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <table>
         <thead><tr><th>ID</th><th>任务名</th><th>调度</th><th>Agent</th><th>状态</th></tr></thead>
         <tbody><tr>
-      <td><code>buer-dai...</code></td>
-      <td></td>
-      <td><span class="tag">undefined</span></td>
-      <td><span class="tag agent-tag">system</span></td>
-      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
-    </tr><tr>
-      <td><code>6b375240...</code></td>
-      <td>每日反思发布</td>
-      <td><span class="tag">undefined</span></td>
-      <td><span class="tag agent-tag">main</span></td>
-      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
-    </tr><tr>
-      <td><code>7363e5ef...</code></td>
-      <td>CEO健康检查</td>
-      <td><span class="tag">undefined</span></td>
-      <td><span class="tag agent-tag">ceo</span></td>
-      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
-    </tr><tr>
       <td><code>129338e0...</code></td>
       <td>每日天气推送</td>
       <td><span class="tag">undefined</span></td>
@@ -292,6 +274,24 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td><span class="tag">undefined</span></td>
       <td><span class="tag agent-tag">jiaoyi</span></td>
       <td><span class="status-dot" style="background:#ef4444"></span>error</td>
+    </tr><tr>
+      <td><code>buer-dai...</code></td>
+      <td></td>
+      <td><span class="tag">undefined</span></td>
+      <td><span class="tag agent-tag">system</span></td>
+      <td><span class="status-dot" style="background:#22c55e"></span>ok</td>
+    </tr><tr>
+      <td><code>6b375240...</code></td>
+      <td>每日反思发布</td>
+      <td><span class="tag">undefined</span></td>
+      <td><span class="tag agent-tag">main</span></td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
+    </tr><tr>
+      <td><code>7363e5ef...</code></td>
+      <td>CEO健康检查</td>
+      <td><span class="tag">undefined</span></td>
+      <td><span class="tag agent-tag">ceo</span></td>
+      <td><span class="status-dot" style="background:#ef4444"></span>error</td>
     </tr></tbody>
       </table>
     </div>
@@ -314,7 +314,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
 
   <!-- 脚本 -->
   <div id="tab-scripts" class="tab-content">
-    <h2 class="section-title">脚本 (42)</h2>
+    <h2 class="section-title">脚本 (43)</h2>
     <div class="panel">
       <table>
         <thead><tr><th>文件名</th><th>描述</th><th>大小</th><th>修改时间</th></tr></thead>
@@ -403,6 +403,11 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
       <td class="desc">!/usr/bin/env node</td>
       <td>18.7KB</td>
       <td>2026/5/20</td>
+    </tr><tr>
+      <td>migrate-openclaw.sh</td>
+      <td class="desc">!/bin/bash</td>
+      <td>2.2KB</td>
+      <td>2026/5/26</td>
     </tr><tr>
       <td>minimax-image-proxy.js</td>
       <td class="desc">!/usr/bin/env node</td>
@@ -759,7 +764,7 @@ code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background:
 </div>
 
 <footer class="footer">
-  OpenClaw 管控台 · 数据来源: openclaw cron list · 生成于 2026/5/26 23:29:46
+  OpenClaw 管控台 · 数据来源: openclaw cron list · 生成于 2026/5/27 06:00:09
 </footer>
 
 <script>
