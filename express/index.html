@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>寄件队长 - 便捷寄快递服务平台</title>
+    <meta name="description" content="寄件队长——专业同城速递、跨城急送与大件物流平台。一键下单、上门取件、全程追踪、安全送达，覆盖全国1000+城市，服务50万+用户。">
+    <meta name="keywords" content="寄快递,同城速递,跨城急送,大件物流,上门取件,寄件队长">
+    <meta name="author" content="寄件队长">
+    <meta name="theme-color" content="#030712">
+    <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="https://page.imoons.cn/express/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="寄件队长">
+    <meta property="og:title" content="寄件队长 - 便捷寄快递服务平台">
+    <meta property="og:description" content="专业同城速递、跨城急送，大件物流平台。一键下单 · 上门取件 · 全程追踪 · 安全送达。">
+    <meta property="og:url" content="https://page.imoons.cn/express/">
+    <meta property="og:image" content="https://page.imoons.cn/express/images/kefu.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="寄件队长 - 便捷寄快递服务平台">
+    <meta name="twitter:description" content="专业同城速递、跨城急送，大件物流平台。">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='4' width='22' height='16' rx='2' fill='%2300d4aa'/%3E%3Cpath d='M1 8h22M8 20V8' stroke='%23030712' stroke-width='2'/%3E%3C/svg%3E">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "寄件队长",
+      "description": "专业同城速递、跨城急送，大件物流平台",
+      "url": "https://page.imoons.cn/express/",
+      "telephone": "19374966023",
+      "areaServed": "CN",
+      "openingHours": "Mo-Su 08:00-22:00"
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        :root{--primary:#00d4aa;--primary-dark:#00a88a;--secondary:#6366f1;--accent:#8b5cf6;--dark:#030712;--darker:#010509;--glass:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--text-primary:#ffffff;--text-secondary:rgba(255,255,255,0.6);--text-muted:rgba(255,255,255,0.4)}
+        :root{--primary:#00d4aa;--primary-dark:#00a88a;--secondary:#6366f1;--accent:#8b5cf6;--dark:#030712;--darker:#010509;--glass:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--text-primary:#ffffff;--text-secondary:rgba(255,255,255,0.6);--text-muted:rgba(255,255,255,0.52)}
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
         body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--dark);min-height:100vh;overflow-x:hidden;color:var(--text-primary);line-height:1.6}
@@ -24,13 +52,28 @@
         .container{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px}
         .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:all 0.4s ease}
         .nav.scrolled{background:rgba(3,7,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
         .nav-logo{font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
         .nav-links{display:flex;gap:32px}
         .nav-link{color:var(--text-secondary);text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.3s ease;position:relative}
         .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s ease}
         .nav-link:hover{color:var(--text-primary)}
         .nav-link:hover::after{width:100%}
+        .nav-right{display:flex;align-items:center;gap:12px}
+        .nav-burger{display:none;width:40px;height:40px;background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;cursor:pointer;position:relative;flex-shrink:0}
+        .nav-burger span{position:absolute;left:10px;right:10px;height:2px;background:var(--text-primary);border-radius:2px;transition:all .3s ease}
+        .nav-burger span:nth-child(1){top:13px}
+        .nav-burger span:nth-child(2){top:19px}
+        .nav-burger span:nth-child(3){top:25px}
+        .nav-burger.active span:nth-child(1){top:19px;transform:rotate(45deg)}
+        .nav-burger.active span:nth-child(2){opacity:0}
+        .nav-burger.active span:nth-child(3){top:19px;transform:rotate(-45deg)}
+        .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,84vw);background:rgba(3,7,18,0.97);backdrop-filter:blur(20px);border-left:1px solid var(--glass-border);z-index:99;transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);padding:96px 24px 32px;display:flex;flex-direction:column;gap:6px}
+        .nav-drawer.open{transform:translateX(0)}
+        .nav-drawer a{color:var(--text-secondary);text-decoration:none;font-size:1.05rem;font-weight:500;padding:14px 12px;border-radius:12px;transition:all .25s ease}
+        .nav-drawer a:hover{color:var(--text-primary);background:var(--glass)}
+        .nav-drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:98;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+        .nav-drawer-overlay.show{opacity:1;visibility:visible}
         .nav-cta{padding:10px 24px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--dark);text-decoration:none;border-radius:100px;font-weight:600;font-size:0.9rem;transition:all 0.3s ease;box-shadow:0 4px 20px rgba(0,212,170,0.3)}
         .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,0.4)}
         .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px}
@@ -95,7 +138,10 @@
         .faq-item:hover{border-color:rgba(0,212,170,0.3)}
         .faq-q{padding:24px 28px;display:flex;align-items:center;gap:16px;cursor:pointer;font-weight:600;font-size:1.05rem}
         .faq-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--dark);flex-shrink:0;font-weight:700}
-        .faq-answer{padding:0 28px 24px 80px;color:var(--text-muted);line-height:1.8;font-size:0.95rem}
+        .faq-answer{padding:0 28px 24px 80px;color:var(--text-muted);line-height:1.8;font-size:0.95rem;display:none}
+        .faq-item.open .faq-answer{display:block}
+        .faq-item .faq-icon{transition:transform .3s ease}
+        .faq-item.open .faq-icon{transform:rotate(45deg)}
         .footer{border-top:1px solid var(--glass-border);padding:60px 0 40px;margin-top:80px}
         .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:32px}
         .footer-brand{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
@@ -109,7 +155,11 @@
         .fade-up{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1)}
         .fade-up.visible{opacity:1;transform:translateY(0)}
         @media(max-width:1024px){.steps-grid{grid-template-columns:repeat(2,1fr)}.services-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat-item::after{display:none}}
-        @media(max-width:768px){.nav-links{display:none}.hero{padding:100px 24px 60px}.hero h1{letter-spacing:4px}.hero-sub{letter-spacing:8px;font-size:0.85rem}.steps-grid,.services-grid,.stats-grid,.qr-grid{grid-template-columns:1fr}.stats-section{padding:40px 24px}.footer-inner{flex-direction:column;gap:32px}.footer-links{gap:32px}}
+        @media(max-width:768px){.nav-links{display:none}.nav-burger{display:block}.hero{padding:100px 24px 60px}.hero h1{letter-spacing:4px}.hero-sub{letter-spacing:8px;font-size:0.85rem}.steps-grid,.services-grid,.stats-grid,.qr-grid{grid-template-columns:1fr}.stats-section{padding:40px 24px}.footer-inner{flex-direction:column;gap:32px}.footer-links{gap:32px}}
+        @media (prefers-reduced-motion: reduce){
+          *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+          .fade-up{opacity:1;transform:none}
+        }
     </style>
 </head>
 <body>
@@ -119,7 +169,9 @@
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
-    <nav class="nav" id="nav"><div class="nav-inner"><div class="nav-logo">寄件队长</div><div class="nav-links"><a href="#services" class="nav-link">服务项目</a><a href="#how" class="nav-link">如何使用</a><a href="#download" class="nav-link">下载体验</a><a href="#faq" class="nav-link">常见问题</a></div><a href="#download" class="nav-cta">立即使用</a></div></nav>
+    <nav class="nav" id="nav"><div class="nav-inner"><div class="nav-logo">寄件队长</div><div class="nav-links"><a href="#services" class="nav-link">服务项目</a><a href="#how" class="nav-link">如何使用</a><a href="#download" class="nav-link">下载体验</a><a href="#faq" class="nav-link">常见问题</a></div><div class="nav-right"><a href="#download" class="nav-cta">立即使用</a><button class="nav-burger" id="navBurger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button></div></div></nav>
+    <div class="nav-drawer-overlay" id="navOverlay"></div>
+    <nav class="nav-drawer" id="navDrawer" aria-label="移动端菜单"><a href="#services">服务项目</a><a href="#how">如何使用</a><a href="#download">下载体验</a><a href="#faq">常见问题</a><a href="#download" class="nav-cta" style="text-align:center;margin-top:8px">立即使用</a></nav>
     <div class="container">
         <section class="hero">
             <div class="hero-badge"><span class="hero-badge-dot"></span>累计服务 50万+ 用户信赖之选</div>
@@ -131,11 +183,44 @@
         </section>
         <section class="section" id="how"><div class="section-header fade-up"><span class="section-label">操作流程</span><h2 class="section-title">简单四步，轻松寄件</h2><p class="section-desc">从下单到签收，全程透明便捷</p></div><div class="steps-grid"><div class="step-card fade-up"><div class="step-num">1</div><h3>扫码下单</h3><p>微信扫描小程序码<br>填写寄件信息</p></div><div class="step-card fade-up"><div class="step-num">2</div><h3>等待取件</h3><p>骑手接单后<br>30分钟内上门</p></div><div class="step-card fade-up"><div class="step-num">3</div><h3>实时追踪</h3><p>物流全程可视化<br>随时掌握动态</p></div><div class="step-card fade-up"><div class="step-num">4</div><h3>确认签收</h3><p>收件人确认收货<br>订单完成</p></div></div></section>
         <section class="section"><div class="stats-section fade-up"><div class="stats-grid"><div class="stat-item"><div class="stat-value">30分钟</div><div class="stat-label">平均上门</div></div><div class="stat-item"><div class="stat-value">1000+</div><div class="stat-label">覆盖城市</div></div><div class="stat-item"><div class="stat-value">99.8%</div><div class="stat-label">签收率</div></div><div class="stat-item"><div class="stat-value">50万+</div><div class="stat-label">用户信赖</div></div></div></div></section>
-        <section class="section" id="services"><div class="section-header fade-up"><span class="section-label">服务项目</span><h2 class="section-title">多种方案，满足不同需求</h2><p class="section-desc">从日常小件到家具大件，我们都能为您服务</p></div><div class="services-grid"><div class="service-card fade-up"><div class="service-icon">📦</div><div><h3>标准快递</h3><p>1-3天送达，全国覆盖，价格实惠，适合日常寄件</p></div></div><div class="service-card fade-up"><div class="service-icon">🚚</div><div><h3>同城速递</h3><p>平均30分钟上门，2小时送达，专人直送，全程保价</p></div></div><div class="service-card fade-up"><div class="service-icon">✈️</div><div><h3>当日达</h3><p>紧急文件、合同、发票等，当日寄当日到，专人专送</p></div></div><div class="service-card fade-up"><div class="service-icon">🛋️</div><div><h3>大件物流</h3><p>家具，家电等大件物品，专业包装，送货上楼</p></div></div><div class="service-card fade-up"><div class="service-icon">🏍️</div><div><h3>电车托运</h3><p>电动车、摩托车托运服务，可随火车、飞机同行</p></div></div><div class="service-card fade-up"><div class="service-icon">🛡️</div><div><h3>保价服务</h3><p>贵重物品可选保价，丢件损坏全额赔付，安全放心</p></div></div></div></section>
-        <section class="section" id="download"><div class="section-header fade-up"><span class="section-label">立即体验</span><h2 class="section-title">扫码使用服务</h2><p class="section-desc">选择最适合您的寄件方式</p></div><div class="qr-grid"><div class="qr-card fade-up"><div class="qr-icon">📱</div><h3>小程序下单</h3><p>扫码进入寄件队长小程序<br>手机下单，即刻上门</p><div class="qr-frame"><img src="images/xcx.jpg" alt="小程序二维码" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><span class="icon">📱</span>小程序码</div></div><p class="qr-hint">微信扫一扫 · 立即寄件</p></div><div class="qr-card fade-up"><div class="qr-icon">📢</div><h3>关注公众号</h3><p>关注公众号获取最新优惠<br>物流动态实时推送</p><div class="qr-frame"><img src="images/gzh.jpg" alt="公众号二维码" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><span class="icon">📢</span>公众号码</div></div><p class="qr-hint">微信扫一扫 · 关注我们</p></div></div></section>
-        <section class="section" id="faq"><div class="section-header fade-up"><span class="section-label">帮助中心</span><h2 class="section-title">常见问题解答</h2></div><div class="faq-list"><div class="faq-item fade-up"><div class="faq-q"><div class="faq-icon">Q</div><span>寄件需要提前预约吗？</span></div><div class="faq-answer">不需要预约，直接在小程序上下单，骑手平均30分钟内上门取件，无需等待。</div></div><div class="faq-item fade-up"><div class="faq-q"><div class="faq-icon">Q</div><span>如何联系在线客服？</span></div><div class="faq-answer">进入小程序后，点击右下角"客服"按钮即可在线咨询，工作时间8:00-22:00实时回复。也可以拨打客服热线19374966023。</div></div><div class="faq-item fade-up"><div class="faq-q"><div class="faq-icon">Q</div><span>电车托运是如何收费的？</span></div><div class="faq-answer">电车托运根据出发地和目的地距离、车辆型号等因素综合计价。小程序内输入车辆信息后会自动生成报价，全程无隐形费用。</div></div><div class="faq-item fade-up"><div class="faq-q"><div class="faq-icon">Q</div><span>大件物品如何收费？</span></div><div class="faq-answer">大件物品根据体积和重量计算费用，小程序内会自动报价。家具，家电等可享受送货上楼服务。</div></div><div class="faq-item fade-up"><div class="faq-q"><div class="faq-icon">Q</div><span>如果物品丢失或损坏怎么办？</span></div><div class="faq-answer">选择保价服务的订单，丢件或损坏可全额赔付。未保价订单根据运费的3-5倍进行赔偿。建议贵重物品寄件时选择保价服务。</div></div><div class="faq-item fade-up"><div class="faq-q"><div class="faq-icon">Q</div><span>支持哪些支付方式？</span></div><div class="faq-answer">小程序支持微信支付、支付宝支付。寄件费用在骑手取件后自动扣款，收件人签收后运费结算完成。</div></div></div></section>
-        <footer class="footer"><div class="container"><div class="footer-inner"><div><div class="footer-brand">寄件队长</div><p class="footer-desc">专业同城速递、跨城急送，大件物流平台，为您提供便捷、安全、可靠的寄件服务。</p></div><div class="footer-links"><div class="footer-col"><h4>快捷链接</h4><a href="#how">如何使用</a><a href="#services">服务项目</a><a href="#download">立即体验</a><a href="#faq">常见问题</a></div><div class="footer-col"><h4>联系我们</h4><a>客服热线：19374966023</a><a>工作时间：8:00-22:00</a></div></div></div><div class="footer-bottom"><p>© 2026 寄件队长快递服务平台</p><div class="footer-hotline">📞 全国服务热线：19374966023</div></div></div></footer>
+        <section class="section" id="services"><div class="section-header fade-up"><span class="section-label">服务项目</span><h2 class="section-title">多种方案，满足不同需求</h2><p class="section-desc">从日常小件到家具大件，我们都能为您服务</p></div><div class="services-grid"><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div><div><h3>标准快递</h3><p>1-3天送达，全国覆盖，价格实惠，适合日常寄件</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><div><h3>同城速递</h3><p>平均30分钟上门，2小时送达，专人直送，全程保价</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.1c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><div><h3>当日达</h3><p>紧急文件、合同、发票等，当日寄当日到，专人专送</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 12v4h2v3h4v-3h8v3h4v-3h2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></div><div><h3>大件物流</h3><p>家具，家电等大件物品，专业包装，送货上楼</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10 14 7h-4l-1 3"/><path d="M6 14h14l1-2-4-3h-5"/><path d="M6 10l-2 1c-1 .5-2 1.5-2 3 0 2 2 4 4 4h2"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/></svg></div><div><h3>电车托运</h3><p>电动车、摩托车托运服务，可随火车、飞机同行</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h3>保价服务</h3><p>贵重物品可选保价，丢件损坏全额赔付，安全放心</p></div></div></div></section>
+        <section class="section" id="download"><div class="section-header fade-up"><span class="section-label">立即体验</span><h2 class="section-title">扫码使用服务</h2><p class="section-desc">选择最适合您的寄件方式</p></div><div class="qr-grid"><div class="qr-card fade-up"><div class="qr-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h3>小程序下单</h3><p>扫码进入寄件队长小程序<br>手机下单，即刻上门</p><div class="qr-frame"><img src="images/xcx.jpg" alt="小程序二维码" width="156" height="156" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>小程序码</div></div><p class="qr-hint">微信扫一扫 · 立即寄件</p></div><div class="qr-card fade-up"><div class="qr-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>关注公众号</h3><p>关注公众号获取最新优惠<br>物流动态实时推送</p><div class="qr-frame"><img src="images/gzh.jpg" alt="公众号二维码" width="156" height="156" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>公众号码</div></div><p class="qr-hint">微信扫一扫 · 关注我们</p></div></div></section>
+        <section class="section" id="faq"><div class="section-header fade-up"><span class="section-label">帮助中心</span><h2 class="section-title">常见问题解答</h2></div><div class="faq-list"><div class="faq-item fade-up open"><div class="faq-q" role="button" tabindex="0" aria-expanded="true"><div class="faq-icon">Q</div><span>寄件需要提前预约吗？</span></div><div class="faq-answer">不需要预约，直接在小程序上下单，骑手平均30分钟内上门取件，无需等待。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>如何联系在线客服？</span></div><div class="faq-answer">进入小程序后，点击右下角"客服"按钮即可在线咨询，工作时间8:00-22:00实时回复。也可以拨打客服热线19374966023。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>电车托运是如何收费的？</span></div><div class="faq-answer">电车托运根据出发地和目的地距离、车辆型号等因素综合计价。小程序内输入车辆信息后会自动生成报价，全程无隐形费用。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>大件物品如何收费？</span></div><div class="faq-answer">大件物品根据体积和重量计算费用，小程序内会自动报价。家具，家电等可享受送货上楼服务。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>如果物品丢失或损坏怎么办？</span></div><div class="faq-answer">选择保价服务的订单，丢件或损坏可全额赔付。未保价订单根据运费的3-5倍进行赔偿。建议贵重物品寄件时选择保价服务。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>支持哪些支付方式？</span></div><div class="faq-answer">小程序支持微信支付、支付宝支付。寄件费用在骑手取件后自动扣款，收件人签收后运费结算完成。</div></div></div></section>
+        <footer class="footer"><div class="container"><div class="footer-inner"><div><div class="footer-brand">寄件队长</div><p class="footer-desc">专业同城速递、跨城急送，大件物流平台，为您提供便捷、安全、可靠的寄件服务。</p></div><div class="footer-links"><div class="footer-col"><h4>快捷链接</h4><a href="#how">如何使用</a><a href="#services">服务项目</a><a href="#download">立即体验</a><a href="#faq">常见问题</a></div><div class="footer-col"><h4>联系我们</h4><a>客服热线：19374966023</a><a>工作时间：8:00-22:00</a></div></div></div><div class="footer-bottom"><p>© 2026 寄件队长快递服务平台</p><div class="footer-hotline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 全国服务热线：19374966023</div></div></div></footer>
     </div>
-    <script>(function(){var n=document.getElementById('nav');window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>50)});var o=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.1});document.querySelectorAll('.fade-up').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelector('.hero').classList.add('visible')},200)})();</script>
+    <script>
+    (function(){
+      var nav=document.getElementById('nav');
+      window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+      // 淡入动画
+      var io=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.1});
+      document.querySelectorAll('.fade-up').forEach(function(e){io.observe(e)});
+      setTimeout(function(){var h=document.querySelector('.hero');if(h)h.classList.add('visible')},200);
+      // 移动端汉堡菜单
+      var burger=document.getElementById('navBurger'),drawer=document.getElementById('navDrawer'),overlay=document.getElementById('navOverlay');
+      function closeDrawer(){drawer.classList.remove('open');burger.classList.remove('active');overlay.classList.remove('show');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','打开菜单')}
+      if(burger&&drawer&&overlay){
+        burger.addEventListener('click',function(){
+          var open=drawer.classList.toggle('open');
+          burger.classList.toggle('active',open);
+          overlay.classList.toggle('show',open);
+          burger.setAttribute('aria-expanded',open?'true':'false');
+          burger.setAttribute('aria-label',open?'关闭菜单':'打开菜单');
+        });
+        drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeDrawer)});
+        overlay.addEventListener('click',closeDrawer);
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer()});
+      }
+      // FAQ 折叠
+      document.querySelectorAll('.faq-q').forEach(function(q){
+        q.addEventListener('click',function(){
+          var item=q.closest('.faq-item');
+          var open=item.classList.toggle('open');
+          q.setAttribute('aria-expanded',open?'true':'false');
+        });
+        q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click()}});
+      });
+    })();
+    </script>
 </body>
 </html>
