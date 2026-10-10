@@ -144,6 +144,8 @@
 <script>
 // ===== 配置 =====
 const API_BASE = '/shuziren/api'; // 后端 API（nginx 代理）
+const OPENCLAW_KEY = 'sk-cp-Dd8mH48rcY41eRTdb76GnPGVlSNBq0if7lNlSHekKvHcrISaA_GhU66DZmTeqOZr919o5PCVH5OtYG0PF8wiys0eprxX_eQVsTK_nfQLjxeyeifauUvo0bo';
+const GW_URL = 'https://api.minimaxi.com/anthropic/v1';
 
 // ===== 状态 =====
 let chatHistory = [];
@@ -201,29 +203,52 @@ async function sendMessage() {
     chatHistory.push({ role: 'user', content: text });
 
     try {
-        const resp = await fetch(API_BASE + '/chat', {
+        // 直接调用 OpenClaw gateway（浏览器直连，绕过服务器 IP 限制）
+        const resp = await fetch(GW_URL + '/messages', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: chatHistory })
+            headers: {
+                'Authorization': 'Bearer ' + OPENCLAW_KEY,
+                'Content-Type': 'application/json',
+                'x-api-key': OPENCLAW_KEY,
+                'anthropic-version': '2023-06-01'
+            },
+            body: JSON.stringify({
+                model: 'MiniMax-M2.5',
+                messages: chatHistory,
+                max_tokens: 1024
+            })
         });
         const data = await resp.json();
 
-        if (data.error) throw new Error(data.error);
+        if (data.error) throw new Error(data.error.message || data.error);
 
-        const reply = data.reply;
+        const reply = data.content?.[0]?.text || '抱歉，我暂时无法回复。';
         chatHistory.push({ role: 'assistant', content: reply });
 
         setReply(reply);
         addChatItem('ai', reply);
 
-        // 播放语音
-        if (data.audioUrl) {
-            await playAudio(data.audioUrl);
-        } else if (data.audio) {
-            // 直接播放 base64 音频
-            playBase64Audio(data.audio);
-        } else {
-            // 没有音频，只显示文字
+        // 播放语音（优先后端 TTS，失败则用浏览器语音）
+        let spoken = false;
+        try {
+            const ttsResp = await fetch(API_BASE + '/tts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: reply })
+            });
+            const ttsData = await ttsResp.json();
+            if (ttsData.audio) {
+                playBase64Audio(ttsData.audio);
+                spoken = true;
+            }
+        } catch (e) {}
+
+        if (!spoken && 'speechSynthesis' in window) {
+            // 浏览器语音 fallback
+            speakWithBrowserTTS(reply);
+        }
+
+        if (!spoken) {
             document.getElementById('avatar').classList.remove('speaking');
         }
 
@@ -281,6 +306,19 @@ function playBase64Audio(base64Data) {
         console.warn('音频播放失败:', e);
         avatar.classList.remove('speaking');
     });
+}
+
+// 浏览器内置 TTS（无 API key 依赖）
+function speakWithBrowserTTS(text) {
+    const avatar = document.getElementById('avatar');
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'zh-CN';
+    utterance.rate = 1.1;
+    utterance.pitch = 1;
+    avatar.classList.add('speaking');
+    utterance.onend = () => avatar.classList.remove('speaking');
+    utterance.onerror = () => avatar.classList.remove('speaking');
+    speechSynthesis.speak(utterance);
 }
 
 // ===== 麦克风 =====

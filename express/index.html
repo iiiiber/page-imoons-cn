@@ -1,226 +1,351 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>寄件队长 - 便捷寄快递服务平台</title>
-    <meta name="description" content="寄件队长——专业同城速递、跨城急送与大件物流平台。一键下单、上门取件、全程追踪、安全送达，覆盖全国1000+城市，服务50万+用户。">
-    <meta name="keywords" content="寄快递,同城速递,跨城急送,大件物流,上门取件,寄件队长">
-    <meta name="author" content="寄件队长">
-    <meta name="theme-color" content="#030712">
-    <meta name="color-scheme" content="dark">
-    <link rel="canonical" href="https://page.imoons.cn/express/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="寄件队长">
-    <meta property="og:title" content="寄件队长 - 便捷寄快递服务平台">
-    <meta property="og:description" content="专业同城速递、跨城急送，大件物流平台。一键下单 · 上门取件 · 全程追踪 · 安全送达。">
-    <meta property="og:url" content="https://page.imoons.cn/express/">
-    <meta property="og:image" content="https://page.imoons.cn/express/images/kefu.jpeg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="寄件队长 - 便捷寄快递服务平台">
-    <meta name="twitter:description" content="专业同城速递、跨城急送，大件物流平台。">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='4' width='22' height='16' rx='2' fill='%2300d4aa'/%3E%3Cpath d='M1 8h22M8 20V8' stroke='%23030712' stroke-width='2'/%3E%3C/svg%3E">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "寄件队长",
-      "description": "专业同城速递、跨城急送，大件物流平台",
-      "url": "https://page.imoons.cn/express/",
-      "telephone": "19374966023",
-      "areaServed": "CN",
-      "openingHours": "Mo-Su 08:00-22:00"
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root{--primary:#00d4aa;--primary-dark:#00a88a;--secondary:#6366f1;--accent:#8b5cf6;--dark:#030712;--darker:#010509;--glass:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--text-primary:#ffffff;--text-secondary:rgba(255,255,255,0.6);--text-muted:rgba(255,255,255,0.52)}
-        *{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth}
-        body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--dark);min-height:100vh;overflow-x:hidden;color:var(--text-primary);line-height:1.6}
-        .noise{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
-        .bg-mesh{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:radial-gradient(ellipse 80% 50% at 20% 40%,rgba(99,102,241,0.15) 0%,transparent 50%),radial-gradient(ellipse 60% 40% at 80% 60%,rgba(139,92,246,0.12) 0%,transparent 50%),radial-gradient(ellipse 50% 30% at 50% 80%,rgba(0,212,170,0.1) 0%,transparent 50%),linear-gradient(180deg,var(--darker) 0%,var(--dark) 50%,#0a1628 100%);animation:mesh-float 20s ease-in-out infinite}
-        @keyframes mesh-float{0%,100%{transform:scale(1) translate(0,0)}33%{transform:scale(1.05) translate(1%,1%)}66%{transform:scale(0.98) translate(-1%,-1%)}}
-        .grid-lines{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 0%,transparent 70%)}
-        .orb{position:fixed;border-radius:50%;filter:blur(80px);z-index:0;animation:orb-float 15s ease-in-out infinite}
-        .orb-1{width:600px;height:600px;background:linear-gradient(135deg,var(--secondary),var(--accent));opacity:0.12;top:-200px;left:-200px}
-        .orb-2{width:500px;height:500px;background:linear-gradient(135deg,var(--primary),var(--secondary));opacity:0.1;bottom:-150px;right:-150px;animation-delay:-7s}
-        .orb-3{width:300px;height:300px;background:var(--primary);opacity:0.08;top:50%;left:60%;animation-delay:-3s}
-        @keyframes orb-float{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-30px) scale(1.05)}50%{transform:translate(-20px,20px) scale(0.95)}75%{transform:translate(20px,30px) scale(1.02)}}
-        .container{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px}
-        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:all 0.4s ease}
-        .nav.scrolled{background:rgba(3,7,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-        .nav-logo{font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
-        .nav-links{display:flex;gap:32px}
-        .nav-link{color:var(--text-secondary);text-decoration:none;font-size:0.95rem;font-weight:500;transition:color 0.3s ease;position:relative}
-        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s ease}
-        .nav-link:hover{color:var(--text-primary)}
-        .nav-link:hover::after{width:100%}
-        .nav-right{display:flex;align-items:center;gap:12px}
-        .nav-burger{display:none;width:40px;height:40px;background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;cursor:pointer;position:relative;flex-shrink:0}
-        .nav-burger span{position:absolute;left:10px;right:10px;height:2px;background:var(--text-primary);border-radius:2px;transition:all .3s ease}
-        .nav-burger span:nth-child(1){top:13px}
-        .nav-burger span:nth-child(2){top:19px}
-        .nav-burger span:nth-child(3){top:25px}
-        .nav-burger.active span:nth-child(1){top:19px;transform:rotate(45deg)}
-        .nav-burger.active span:nth-child(2){opacity:0}
-        .nav-burger.active span:nth-child(3){top:19px;transform:rotate(-45deg)}
-        .nav-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,84vw);background:rgba(3,7,18,0.97);backdrop-filter:blur(20px);border-left:1px solid var(--glass-border);z-index:99;transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);padding:96px 24px 32px;display:flex;flex-direction:column;gap:6px}
-        .nav-drawer.open{transform:translateX(0)}
-        .nav-drawer a{color:var(--text-secondary);text-decoration:none;font-size:1.05rem;font-weight:500;padding:14px 12px;border-radius:12px;transition:all .25s ease}
-        .nav-drawer a:hover{color:var(--text-primary);background:var(--glass)}
-        .nav-drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:98;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
-        .nav-drawer-overlay.show{opacity:1;visibility:visible}
-        .nav-cta{padding:10px 24px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--dark);text-decoration:none;border-radius:100px;font-weight:600;font-size:0.9rem;transition:all 0.3s ease;box-shadow:0 4px 20px rgba(0,212,170,0.3)}
-        .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,0.4)}
-        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px}
-        .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:12px 28px;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;backdrop-filter:blur(20px);margin-bottom:32px;font-size:0.9rem;color:var(--text-secondary);animation:badge-glow 3s ease-in-out infinite}
-        @keyframes badge-glow{0%,100%{box-shadow:0 0 30px rgba(0,212,170,0.1)}50%{box-shadow:0 0 50px rgba(0,212,170,0.2)}}
-        .hero-badge-dot{width:8px;height:8px;background:var(--primary);border-radius:50%;animation:dot-pulse 2s ease-in-out infinite}
-        @keyframes dot-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:0.7}}
-        .hero h1{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;letter-spacing:8px;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,var(--primary) 50%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:gradient-shift 8s ease infinite}
-        @keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-        .hero-sub{font-size:1rem;letter-spacing:16px;color:var(--primary);margin-bottom:32px;font-weight:500}
-        .hero-desc{font-size:1.25rem;color:var(--text-secondary);max-width:600px;margin-bottom:48px;line-height:1.8;font-weight:300}
-        .hero-cta-group{display:flex;gap:16px;margin-bottom:64px;flex-wrap:wrap;justify-content:center}
-        .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--dark);text-decoration:none;border-radius:100px;font-weight:700;font-size:1.05rem;transition:all 0.4s cubic-bezier(0.23,1,0.32,1);box-shadow:0 8px 40px rgba(0,212,170,0.35);position:relative;overflow:hidden}
-        .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.6s ease}
-        .btn-primary:hover::before{left:100%}
-        .btn-primary:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 50px rgba(0,212,170,0.5)}
-        .btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;background:var(--glass);border:1px solid var(--glass-border);color:var(--text-primary);text-decoration:none;border-radius:100px;font-weight:600;font-size:1.05rem;backdrop-filter:blur(20px);transition:all 0.4s ease}
-        .btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);transform:translateY(-4px)}
-        .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-muted);font-size:0.85rem;animation:scroll-bounce 2s ease-in-out infinite}
-        @keyframes scroll-bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-        .scroll-line{width:1px;height:40px;background:linear-gradient(180deg,var(--primary),transparent)}
-        .section{padding:100px 0}
-        .section-header{text-align:center;margin-bottom:64px}
-        .section-label{display:inline-block;padding:8px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;font-size:0.85rem;color:var(--primary);margin-bottom:20px;font-weight:500}
-        .section-title{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:16px;background:linear-gradient(135deg,#fff,var(--text-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .section-desc{font-size:1.1rem;color:var(--text-muted);max-width:500px;margin:0 auto}
-        .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-        .step-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:24px;padding:40px 24px;text-align:center;position:relative;backdrop-filter:blur(20px);transition:all 0.5s cubic-bezier(0.23,1,0.32,1);overflow:hidden}
-        .step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));transform:scaleX(0);transition:transform 0.5s ease}
-        .step-card:hover::before{transform:scaleX(1)}
-        .step-card:hover{transform:translateY(-12px);border-color:rgba(0,212,170,0.3);box-shadow:0 30px 80px rgba(0,212,170,0.15)}
-        .step-num{width:64px;height:64px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--dark);margin:0 auto 24px;box-shadow:0 8px 30px rgba(0,212,170,0.3)}
-        .step-card h3{font-size:1.2rem;font-weight:700;margin-bottom:12px}
-        .step-card p{color:var(--text-muted);font-size:0.95rem;line-height:1.7}
-        .stats-section{background:var(--glass);border:1px solid var(--glass-border);border-radius:32px;padding:60px;backdrop-filter:blur(20px)}
-        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
-        .stat-item{text-align:center;position:relative}
-        .stat-item::after{content:'';position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:1px;height:60px;background:var(--glass-border)}
-        .stat-item:last-child::after{display:none}
-        .stat-value{font-size:3.5rem;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;line-height:1}
-        .stat-label{color:var(--text-muted);font-size:1rem;font-weight:500}
-        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-        .service-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:24px;padding:36px;transition:all 0.5s cubic-bezier(0.23,1,0.32,1);backdrop-filter:blur(20px);display:flex;gap:20px;align-items:flex-start}
-        .service-card:hover{transform:translateY(-8px);border-color:rgba(0,212,170,0.3);box-shadow:0 20px 60px rgba(0,212,170,0.12)}
-        .service-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;box-shadow:0 8px 30px rgba(0,212,170,0.25)}
-        .service-card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
-        .service-card p{color:var(--text-muted);font-size:0.95rem;line-height:1.7}
-        .qr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
-        .qr-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:28px;padding:48px;text-align:center;backdrop-filter:blur(20px);transition:all 0.5s cubic-bezier(0.23,1,0.32,1);position:relative;overflow:hidden}
-        .qr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
-        .qr-card:hover{transform:translateY(-10px);border-color:rgba(0,212,170,0.3);box-shadow:0 30px 80px rgba(0,212,170,0.15)}
-        .qr-icon{width:80px;height:80px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 24px;box-shadow:0 12px 40px rgba(0,212,170,0.3)}
-        .qr-card h3{font-size:1.4rem;font-weight:700;margin-bottom:12px}
-        .qr-card>p{color:var(--text-muted);margin-bottom:28px;font-size:0.95rem}
-        .qr-frame{width:180px;height:180px;background:#fff;border-radius:20px;margin:0 auto 20px;padding:12px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
-        .qr-frame img{width:100%;height:100%;border-radius:12px}
-        .qr-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#666;font-size:14px;gap:8px}
-        .qr-placeholder .icon{font-size:40px;opacity:0.5}
-        .qr-hint{color:var(--primary);font-weight:600;font-size:1rem}
-        .faq-list{max-width:800px;margin:0 auto}
-        .faq-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:all 0.3s ease}
-        .faq-item:hover{border-color:rgba(0,212,170,0.3)}
-        .faq-q{padding:24px 28px;display:flex;align-items:center;gap:16px;cursor:pointer;font-weight:600;font-size:1.05rem}
-        .faq-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--dark);flex-shrink:0;font-weight:700}
-        .faq-answer{padding:0 28px 24px 80px;color:var(--text-muted);line-height:1.8;font-size:0.95rem;display:none}
-        .faq-item.open .faq-answer{display:block}
-        .faq-item .faq-icon{transition:transform .3s ease}
-        .faq-item.open .faq-icon{transform:rotate(45deg)}
-        .footer{border-top:1px solid var(--glass-border);padding:60px 0 40px;margin-top:80px}
-        .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:32px}
-        .footer-brand{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
-        .footer-desc{color:var(--text-muted);font-size:0.95rem;max-width:300px}
-        .footer-links{display:flex;gap:60px;flex-wrap:wrap}
-        .footer-col h4{font-size:0.9rem;font-weight:600;margin-bottom:16px;color:var(--text-primary)}
-        .footer-col a{display:block;color:var(--text-muted);text-decoration:none;font-size:0.9rem;margin-bottom:10px;transition:color 0.3s ease}
-        .footer-col a:hover{color:var(--primary)}
-        .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid var(--glass-border);color:var(--text-muted);font-size:0.9rem}
-        .footer-hotline{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--glass);border:1px solid rgba(0,212,170,0.3);border-radius:100px;color:var(--primary);font-weight:600;margin-top:20px}
-        .fade-up{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1)}
-        .fade-up.visible{opacity:1;transform:translateY(0)}
-        @media(max-width:1024px){.steps-grid{grid-template-columns:repeat(2,1fr)}.services-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat-item::after{display:none}}
-        @media(max-width:768px){.nav-links{display:none}.nav-burger{display:block}.hero{padding:100px 24px 60px}.hero h1{letter-spacing:4px}.hero-sub{letter-spacing:8px;font-size:0.85rem}.steps-grid,.services-grid,.stats-grid,.qr-grid{grid-template-columns:1fr}.stats-section{padding:40px 24px}.footer-inner{flex-direction:column;gap:32px}.footer-links{gap:32px}}
-        @media (prefers-reduced-motion: reduce){
-          *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-          .fade-up{opacity:1;transform:none}
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>寄件队长 - 专业同城速递 · 跨城急送 · 大件物流平台</title>
+<meta name="description" content="寄件队长——专业同城速递、跨城急送与大件物流平台。一键下单、上门取件、全程追踪、安全送达，覆盖全国1000+城市，服务50万+企业及个人用户。">
+<meta name="keywords" content="寄快递,同城速递,跨城急送,大件物流,上门取件,寄件队长,物流平台">
+<meta name="author" content="寄件队长">
+<meta name="theme-color" content="#0a1633">
+<link rel="canonical" href="https://page.imoons.cn/express/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="寄件队长">
+<meta property="og:title" content="寄件队长 - 专业同城速递 · 跨城急送 · 大件物流平台">
+<meta property="og:description" content="专业同城速递、跨城急送，大件物流平台。一键下单 · 上门取件 · 全程追踪 · 安全送达。">
+<meta property="og:url" content="https://page.imoons.cn/express/">
+<meta property="og:image" content="https://page.imoons.cn/express/images/kefu.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='4' width='22' height='16' rx='2' fill='%232f6ed6'/%3E%3Cpath d='M1 8h22M8 20V8' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"寄件队长","description":"专业同城速递、跨城急送，大件物流平台","url":"https://page.imoons.cn/express/","telephone":"19374966023","areaServed":"CN","openingHours":"Mo-Su 08:00-22:00"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#2f6ed6;--primary-dark:#1b4fa8;--primary-deep:#0a1633;--accent:#ffb400;--grad:linear-gradient(135deg,#2f6ed6 0%,#6ea8ff 100%);--grad-strong:linear-gradient(135deg,#1b4fa8 0%,#2f6ed6 55%,#6ea8ff 100%);--bg:#f4f6fb;--card:#fff;--text:#0f1f3d;--muted:#5c6b8a;--line:#e3e9f4;--sh:0 2px 14px rgba(10,22,51,0.06);--sh2:0 14px 40px rgba(47,110,214,0.18);--radius:18px;--font:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1160px;margin:0 auto;padding:0 22px}
+/* ===== 顶栏 ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.22rem;font-weight:800;color:var(--primary-dark)}
+.logo .logo-ico{width:32px;height:32px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 12px rgba(47,110,214,0.35)}
+.nav-links{display:flex;gap:4px;margin-left:10px}
+.nav-links a{font-size:0.94rem;color:var(--muted);font-weight:500;padding:9px 14px;border-radius:9px;transition:all .2s}
+.nav-links a:hover{color:var(--primary);background:#f0f5ff}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.nav-tel{display:flex;flex-direction:column;align-items:flex-end;line-height:1.15}
+.nav-tel small{font-size:0.7rem;color:var(--muted)}
+.nav-tel b{font-size:0.95rem;color:var(--primary-dark);font-weight:700}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--grad);color:#fff;border-radius:50px;font-size:0.92rem;font-weight:600;transition:all .25s;box-shadow:0 6px 18px rgba(47,110,214,0.3)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(47,110,214,0.42)}
+.nav-burger{display:none;width:40px;height:40px;border:none;background:#f0f5ff;border-radius:10px;cursor:pointer;position:relative}
+.nav-burger span{position:absolute;left:10px;right:10px;height:2px;background:var(--primary-dark);border-radius:2px;transition:all .3s}
+.nav-burger span:nth-child(1){top:13px}
+.nav-burger span:nth-child(2){top:19px}
+.nav-burger span:nth-child(3){top:25px}
+.nav-burger.active span:nth-child(1){top:19px;transform:rotate(45deg)}
+.nav-burger.active span:nth-child(2){opacity:0}
+.nav-burger.active span:nth-child(3){top:19px;transform:rotate(-45deg)}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(300px,82vw);background:#fff;z-index:200;transform:translateX(100%);transition:transform .35s cubic-bezier(.23,1,.32,1);padding:80px 22px 26px;display:flex;flex-direction:column;gap:4px;box-shadow:-8px 0 30px rgba(0,0,0,0.12)}
+.drawer.open{transform:translateX(0)}
+.drawer a{font-size:1.04rem;font-weight:500;color:var(--muted);padding:14px 12px;border-radius:10px}
+.drawer a:hover{color:var(--primary);background:#f0f5ff}
+.drawer .d-cta{margin-top:10px;background:var(--grad);color:#fff;text-align:center;font-weight:700}
+.drawer .d-cta:hover{color:#fff}
+.overlay{position:fixed;inset:0;background:rgba(10,22,51,0.45);z-index:190;opacity:0;visibility:hidden;transition:all .3s}
+.overlay.show{opacity:1;visibility:visible}
+/* ===== Hero ===== */
+.hero{position:relative;padding:72px 0 44px;text-align:center;overflow:hidden;background:transparent}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(680px 300px at 18% 0%,rgba(110,168,255,0.20),transparent 60%),radial-gradient(560px 260px at 88% 12%,rgba(47,110,214,0.12),transparent 60%),radial-gradient(480px 240px at 50% 100%,rgba(255,180,0,0.07),transparent 55%)}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(47,110,214,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(47,110,214,0.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 10%,transparent 75%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:#fff;border:1px solid var(--line);border-radius:50px;font-size:0.86rem;color:var(--primary-dark);font-weight:600;margin-bottom:22px;box-shadow:var(--sh)}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(255,180,0,0.6)}
+.hero h1{font-size:clamp(2.2rem,6.5vw,3.6rem);font-weight:900;letter-spacing:3px;margin-bottom:12px;color:var(--primary-deep)}
+.hero-sub{font-size:0.94rem;letter-spacing:8px;color:var(--primary);font-weight:700;margin-bottom:18px}
+.hero-desc{font-size:1.14rem;color:var(--muted);max-width:680px;margin:0 auto 32px;line-height:2}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:9px;padding:15px 38px;border-radius:50px;font-weight:700;font-size:1.02rem;transition:all .25s;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:var(--primary-deep);box-shadow:0 10px 30px rgba(255,180,0,0.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,180,0,0.5)}
+.btn-secondary{background:#fff;color:var(--primary-dark);border:1.5px solid var(--line)}
+.btn-secondary:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--sh)}
+.hero-trust{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:0.86rem;color:var(--muted)}
+.hero-trust span{display:inline-flex;align-items:center;gap:6px}
+.hero-trust svg{color:var(--primary)}
+/* 统计条 */
+.stats{margin-top:-30px;position:relative;z-index:5;display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 10px;box-shadow:var(--sh2)}
+.stat{flex:1;min-width:130px;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
+.stat:not(:last-child)::after{content:'';position:absolute;right:0;top:12%;height:76%;width:1px;background:var(--line)}
+.stat-value{font-size:2.1rem;font-weight:900;color:var(--primary-dark);background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
+.stat-label{font-size:0.84rem;color:var(--muted)}
+.stat-desc{font-size:0.72rem;color:#aab4cc;margin-top:2px}
+@media(max-width:640px){.stats{padding:20px 6px}.stat{min-width:45%}.stat:not(:last-child)::after{display:none}.stat:nth-child(2)::after{display:none}}
+/* 通用 section */
+.section{padding:56px 0}
+.sec-head{text-align:center;margin-bottom:40px}
+.sec-label{display:inline-flex;align-items:center;gap:6px;padding:7px 18px;background:#f0f5ff;color:var(--primary);border-radius:50px;font-size:0.84rem;font-weight:700;margin-bottom:16px}
+.sec-title{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.sec-desc{font-size:1rem;color:var(--muted)}
+/* 保障条 */
+.assurance{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px}
+.ass-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 18px;text-align:center;transition:all .25s}
+.ass-item:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:rgba(47,110,214,0.3)}
+.ass-ico{width:50px;height:50px;border-radius:15px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;margin:0 auto 14px;box-shadow:0 6px 16px rgba(47,110,214,0.3)}
+.ass-item h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.ass-item p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+@media(max-width:900px){.assurance{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.assurance{grid-template-columns:1fr}}
+/* 四步 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 22px;text-align:center;position:relative;transition:all .25s}
+.step:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:rgba(47,110,214,0.3)}
+.step-num{width:56px;height:56px;border-radius:17px;background:var(--grad);color:#fff;font-size:1.4rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 20px rgba(47,110,214,0.32)}
+.step h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.step p{font-size:0.88rem;color:var(--muted);line-height:1.7}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+/* 服务 */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:flex;gap:16px;align-items:flex-start;transition:all .25s;position:relative;overflow:hidden}
+.service::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transition:transform .4s}
+.service:hover::before{transform:scaleX(1)}
+.service:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
+.service-ico{width:52px;height:52px;border-radius:15px;background:#f0f5ff;display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
+.service h3{font-size:1.06rem;font-weight:700;margin-bottom:7px}
+.service p{font-size:0.88rem;color:var(--muted);line-height:1.7}
+@media(max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.services{grid-template-columns:1fr}}
+/* 客户评价 */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;position:relative}
+.review::before{content:'“';position:absolute;top:10px;right:18px;font-size:4rem;line-height:1;color:#eef3ff;font-family:Georgia,serif}
+.review .stars{color:var(--accent);font-size:0.95rem;letter-spacing:2px;margin-bottom:12px}
+.review p{font-size:0.92rem;color:var(--muted);line-height:1.8;margin-bottom:16px;position:relative}
+.review .who{display:flex;align-items:center;gap:10px;font-size:0.86rem;font-weight:600;color:var(--text)}
+.review .who .av{width:34px;height:34px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:700}
+.review .who small{display:block;font-weight:400;color:#aab4cc;font-size:0.74rem}
+@media(max-width:900px){.reviews{grid-template-columns:1fr}}
+/* 扫码 */
+.qr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.qr-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 24px;text-align:center;position:relative;overflow:hidden;transition:all .25s}
+.qr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+.qr-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.qr-ico{width:62px;height:62px;border-radius:18px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;margin:0 auto 16px;box-shadow:0 8px 20px rgba(47,110,214,0.3)}
+.qr-card h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}
+.qr-card>p{color:var(--muted);font-size:0.92rem;margin-bottom:20px;line-height:1.7}
+.qr-frame{width:180px;height:180px;background:#fff;border:1px solid var(--line);border-radius:14px;margin:0 auto 16px;padding:10px;box-shadow:var(--sh)}
+.qr-frame img{width:100%;height:100%;border-radius:8px;object-fit:cover}
+.qr-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#aab4cc;font-size:13px;gap:6px}
+.qr-hint{color:var(--primary);font-weight:700;font-size:0.98rem}
+@media(max-width:680px){.qr-grid{grid-template-columns:1fr}}
+/* FAQ */
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq-q{display:flex;align-items:center;gap:14px;padding:19px 22px;cursor:pointer;font-weight:600;font-size:1rem;user-select:none}
+.faq-ico{width:32px;height:32px;border-radius:10px;background:#f0f5ff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-ico{transform:rotate(45deg)}
+.faq-ans{display:none;padding:0 22px 20px 68px;color:var(--muted);font-size:0.93rem;line-height:1.8}
+.faq-item.open .faq-ans{display:block}
+/* 底部 CTA */
+.cta-band{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(135deg,var(--primary-deep),#12387a);text-align:center;padding:56px 30px;color:#fff}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 200px at 80% 0%,rgba(255,180,0,0.2),transparent 60%),radial-gradient(500px 220px at 10% 100%,rgba(110,168,255,0.25),transparent 60%)}
+.cta-band>*{position:relative;z-index:1}
+.cta-band h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;margin-bottom:10px}
+.cta-band p{color:#c7d8f5;margin-bottom:26px;font-size:1rem}
+.cta-band .btn-primary{font-size:1.08rem;padding:16px 44px}
+/* 页脚 */
+.footer{border-top:1px solid var(--line);margin-top:48px;padding:44px 0 30px;background:#fff}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap;margin-bottom:26px}
+.footer-brand{font-size:1.35rem;font-weight:900;color:var(--primary-dark);margin-bottom:10px}
+.footer-desc{color:var(--muted);font-size:0.9rem;max-width:330px;line-height:1.8}
+.footer-links{display:flex;gap:60px;flex-wrap:wrap}
+.footer-col h4{font-size:0.9rem;font-weight:700;margin-bottom:15px;color:var(--text)}
+.footer-col a{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:11px;transition:color .2s}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:0.85rem}
+.footer-hotline{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;background:var(--grad);color:#fff;border-radius:50px;font-weight:700;font-size:0.94rem;box-shadow:0 6px 18px rgba(47,110,214,0.3)}
+/* 动画 */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .fade-up{opacity:1;transform:none}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-tel{display:none}
+  .nav-burger{display:block}
+  .hero{padding:56px 0 44px}
+  .hero h1{letter-spacing:1px}
+  .hero-sub{letter-spacing:4px;font-size:0.8rem}
+  .sec-title{font-size:1.5rem}
+}
+</style>
 </head>
 <body>
-    <div class="noise"></div>
-    <div class="bg-mesh"></div>
-    <div class="grid-lines"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <nav class="nav" id="nav"><div class="nav-inner"><div class="nav-logo">寄件队长</div><div class="nav-links"><a href="#services" class="nav-link">服务项目</a><a href="#how" class="nav-link">如何使用</a><a href="#download" class="nav-link">下载体验</a><a href="#faq" class="nav-link">常见问题</a></div><div class="nav-right"><a href="#download" class="nav-cta">立即使用</a><button class="nav-burger" id="navBurger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button></div></div></nav>
-    <div class="nav-drawer-overlay" id="navOverlay"></div>
-    <nav class="nav-drawer" id="navDrawer" aria-label="移动端菜单"><a href="#services">服务项目</a><a href="#how">如何使用</a><a href="#download">下载体验</a><a href="#faq">常见问题</a><a href="#download" class="nav-cta" style="text-align:center;margin-top:8px">立即使用</a></nav>
-    <div class="container">
-        <section class="hero">
-            <div class="hero-badge"><span class="hero-badge-dot"></span>累计服务 50万+ 用户信赖之选</div>
-            <h1>寄件队长</h1>
-            <p class="hero-sub">JI JIAN DUI ZHANG</p>
-            <p class="hero-desc">专业同城速递、跨城急送，大件物流平台<br>一键下单 · 上门取件 · 全程追踪 · 安全送达</p>
-            <div class="hero-cta-group"><a href="#download" class="btn-primary"><span>立即体验</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="#services" class="btn-secondary"><span>了解更多</span></a></div>
-            <div class="hero-scroll"><span>向下滚动</span><div class="scroll-line"></div></div>
-        </section>
-        <section class="section" id="how"><div class="section-header fade-up"><span class="section-label">操作流程</span><h2 class="section-title">简单四步，轻松寄件</h2><p class="section-desc">从下单到签收，全程透明便捷</p></div><div class="steps-grid"><div class="step-card fade-up"><div class="step-num">1</div><h3>扫码下单</h3><p>微信扫描小程序码<br>填写寄件信息</p></div><div class="step-card fade-up"><div class="step-num">2</div><h3>等待取件</h3><p>骑手接单后<br>30分钟内上门</p></div><div class="step-card fade-up"><div class="step-num">3</div><h3>实时追踪</h3><p>物流全程可视化<br>随时掌握动态</p></div><div class="step-card fade-up"><div class="step-num">4</div><h3>确认签收</h3><p>收件人确认收货<br>订单完成</p></div></div></section>
-        <section class="section"><div class="stats-section fade-up"><div class="stats-grid"><div class="stat-item"><div class="stat-value">30分钟</div><div class="stat-label">平均上门</div></div><div class="stat-item"><div class="stat-value">1000+</div><div class="stat-label">覆盖城市</div></div><div class="stat-item"><div class="stat-value">99.8%</div><div class="stat-label">签收率</div></div><div class="stat-item"><div class="stat-value">50万+</div><div class="stat-label">用户信赖</div></div></div></div></section>
-        <section class="section" id="services"><div class="section-header fade-up"><span class="section-label">服务项目</span><h2 class="section-title">多种方案，满足不同需求</h2><p class="section-desc">从日常小件到家具大件，我们都能为您服务</p></div><div class="services-grid"><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div><div><h3>标准快递</h3><p>1-3天送达，全国覆盖，价格实惠，适合日常寄件</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><div><h3>同城速递</h3><p>平均30分钟上门，2小时送达，专人直送，全程保价</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.1c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><div><h3>当日达</h3><p>紧急文件、合同、发票等，当日寄当日到，专人专送</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 12v4h2v3h4v-3h8v3h4v-3h2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></div><div><h3>大件物流</h3><p>家具，家电等大件物品，专业包装，送货上楼</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10 14 7h-4l-1 3"/><path d="M6 14h14l1-2-4-3h-5"/><path d="M6 10l-2 1c-1 .5-2 1.5-2 3 0 2 2 4 4 4h2"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/></svg></div><div><h3>电车托运</h3><p>电动车、摩托车托运服务，可随火车、飞机同行</p></div></div><div class="service-card fade-up"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h3>保价服务</h3><p>贵重物品可选保价，丢件损坏全额赔付，安全放心</p></div></div></div></section>
-        <section class="section" id="download"><div class="section-header fade-up"><span class="section-label">立即体验</span><h2 class="section-title">扫码使用服务</h2><p class="section-desc">选择最适合您的寄件方式</p></div><div class="qr-grid"><div class="qr-card fade-up"><div class="qr-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h3>小程序下单</h3><p>扫码进入寄件队长小程序<br>手机下单，即刻上门</p><div class="qr-frame"><img src="images/xcx.jpg" alt="小程序二维码" width="156" height="156" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>小程序码</div></div><p class="qr-hint">微信扫一扫 · 立即寄件</p></div><div class="qr-card fade-up"><div class="qr-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>关注公众号</h3><p>关注公众号获取最新优惠<br>物流动态实时推送</p><div class="qr-frame"><img src="images/gzh.jpg" alt="公众号二维码" width="156" height="156" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>公众号码</div></div><p class="qr-hint">微信扫一扫 · 关注我们</p></div></div></section>
-        <section class="section" id="faq"><div class="section-header fade-up"><span class="section-label">帮助中心</span><h2 class="section-title">常见问题解答</h2></div><div class="faq-list"><div class="faq-item fade-up open"><div class="faq-q" role="button" tabindex="0" aria-expanded="true"><div class="faq-icon">Q</div><span>寄件需要提前预约吗？</span></div><div class="faq-answer">不需要预约，直接在小程序上下单，骑手平均30分钟内上门取件，无需等待。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>如何联系在线客服？</span></div><div class="faq-answer">进入小程序后，点击右下角"客服"按钮即可在线咨询，工作时间8:00-22:00实时回复。也可以拨打客服热线19374966023。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>电车托运是如何收费的？</span></div><div class="faq-answer">电车托运根据出发地和目的地距离、车辆型号等因素综合计价。小程序内输入车辆信息后会自动生成报价，全程无隐形费用。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>大件物品如何收费？</span></div><div class="faq-answer">大件物品根据体积和重量计算费用，小程序内会自动报价。家具，家电等可享受送货上楼服务。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>如果物品丢失或损坏怎么办？</span></div><div class="faq-answer">选择保价服务的订单，丢件或损坏可全额赔付。未保价订单根据运费的3-5倍进行赔偿。建议贵重物品寄件时选择保价服务。</div></div><div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-icon">Q</div><span>支持哪些支付方式？</span></div><div class="faq-answer">小程序支持微信支付、支付宝支付。寄件费用在骑手取件后自动扣款，收件人签收后运费结算完成。</div></div></div></section>
-        <footer class="footer"><div class="container"><div class="footer-inner"><div><div class="footer-brand">寄件队长</div><p class="footer-desc">专业同城速递、跨城急送，大件物流平台，为您提供便捷、安全、可靠的寄件服务。</p></div><div class="footer-links"><div class="footer-col"><h4>快捷链接</h4><a href="#how">如何使用</a><a href="#services">服务项目</a><a href="#download">立即体验</a><a href="#faq">常见问题</a></div><div class="footer-col"><h4>联系我们</h4><a>客服热线：19374966023</a><a>工作时间：8:00-22:00</a></div></div></div><div class="footer-bottom"><p>© 2026 寄件队长快递服务平台</p><div class="footer-hotline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 全国服务热线：19374966023</div></div></div></footer>
+<!-- 顶栏 -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>寄件队长</div>
+    <div class="nav-links"><a href="#services">服务项目</a><a href="#how">如何使用</a><a href="#download">下载体验</a><a href="#faq">常见问题</a></div>
+    <div class="nav-right">
+      <div class="nav-tel"><small>全国服务热线</small><b>19374966023</b></div>
+      <a href="#download" class="nav-cta">立即使用</a>
+      <button class="nav-burger" id="navBurger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <script>
-    (function(){
-      var nav=document.getElementById('nav');
-      window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
-      // 淡入动画
-      var io=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.1});
-      document.querySelectorAll('.fade-up').forEach(function(e){io.observe(e)});
-      setTimeout(function(){var h=document.querySelector('.hero');if(h)h.classList.add('visible')},200);
-      // 移动端汉堡菜单
-      var burger=document.getElementById('navBurger'),drawer=document.getElementById('navDrawer'),overlay=document.getElementById('navOverlay');
-      function closeDrawer(){drawer.classList.remove('open');burger.classList.remove('active');overlay.classList.remove('show');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','打开菜单')}
-      if(burger&&drawer&&overlay){
-        burger.addEventListener('click',function(){
-          var open=drawer.classList.toggle('open');
-          burger.classList.toggle('active',open);
-          overlay.classList.toggle('show',open);
-          burger.setAttribute('aria-expanded',open?'true':'false');
-          burger.setAttribute('aria-label',open?'关闭菜单':'打开菜单');
-        });
-        drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeDrawer)});
-        overlay.addEventListener('click',closeDrawer);
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer()});
-      }
-      // FAQ 折叠
-      document.querySelectorAll('.faq-q').forEach(function(q){
-        q.addEventListener('click',function(){
-          var item=q.closest('.faq-item');
-          var open=item.classList.toggle('open');
-          q.setAttribute('aria-expanded',open?'true':'false');
-        });
-        q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click()}});
-      });
-    })();
-    </script>
+  </div>
+</nav>
+<div class="overlay" id="overlay"></div>
+<nav class="drawer" id="drawer" aria-label="移动端菜单">
+  <a href="#services">服务项目</a><a href="#how">如何使用</a><a href="#download">下载体验</a><a href="#faq">常见问题</a>
+  <a href="#download" class="d-cta">立即使用 · 19374966023</a>
+</nav>
+
+<div class="container">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge"><span class="dot"></span>国家认证 · 全链路合规 · 累计服务 50万+ 用户</div>
+    <h1>寄件队长</h1>
+    <p class="hero-sub">JI JIAN DUI ZHANG</p>
+    <p class="hero-desc">专业同城速递 · 跨城急送 · 大件物流一站式服务平台<br>一键下单 · 上门取件 · 全程追踪 · 安全送达</p>
+    <div class="hero-cta">
+      <a href="#download" class="btn-primary"><span>立即体验</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#services" class="btn-secondary">了解服务项目</a>
+    </div>
+    <div class="hero-trust">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>正规持牌承运</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>丢损必赔</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7×14 小时客服</span>
+    </div>
+  </section>
+
+  <!-- 数据统计 -->
+  <section class="stats">
+    <div class="stat"><span class="stat-value">30<span style="font-size:1rem">分钟</span></span><span class="stat-label">平均上门取件</span><span class="stat-desc">快人一步</span></div>
+    <div class="stat"><span class="stat-value">1000+</span><span class="stat-label">覆盖城市</span><span class="stat-desc">全国网络</span></div>
+    <div class="stat"><span class="stat-value">99.8%</span><span class="stat-label">准时签收率</span><span class="stat-desc">行业领先</span></div>
+    <div class="stat"><span class="stat-value">50万+</span><span class="stat-label">服务用户</span><span class="stat-desc">持续信赖</span></div>
+  </section>
+
+  <!-- 服务保障 -->
+  <section class="section" style="padding-top:44px">
+    <div class="sec-head fade-up"><span class="sec-label">服务保障</span><h2 class="sec-title">让每一次寄件都安心</h2><p class="sec-desc">看得见的服务标准，守得住的品质承诺</p></div>
+    <div class="assurance">
+      <div class="ass-item fade-up"><div class="ass-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>全程保价</h3><p>贵重物品可选保价，丢件损坏最高全额赔付</p></div>
+      <div class="ass-item fade-up"><div class="ass-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>实时追踪</h3><p>物流节点全程可视化，动态实时可查</p></div>
+      <div class="ass-item fade-up"><div class="ass-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><h3>7×14 客服</h3><p>早 8 点至晚 10 点，人工客服实时响应</p></div>
+      <div class="ass-item fade-up"><div class="ass-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 18 0"/><path d="m9 21 0-12"/></svg></div><h3>价格透明</h3><p>小程序自动报价，全程无隐形费用</p></div>
+    </div>
+  </section>
+
+  <!-- 四步流程 -->
+  <section class="section" id="how">
+    <div class="sec-head fade-up"><span class="sec-label">操作流程</span><h2 class="sec-title">简单四步，轻松寄件</h2><p class="sec-desc">从下单到签收，全程透明便捷</p></div>
+    <div class="steps">
+      <div class="step fade-up"><div class="step-num">1</div><h3>扫码下单</h3><p>微信扫描小程序码<br>填写寄件信息</p></div>
+      <div class="step fade-up"><div class="step-num">2</div><h3>等待取件</h3><p>骑手接单后<br>30分钟内上门</p></div>
+      <div class="step fade-up"><div class="step-num">3</div><h3>实时追踪</h3><p>物流全程可视化<br>随时掌握动态</p></div>
+      <div class="step fade-up"><div class="step-num">4</div><h3>确认签收</h3><p>收件人确认收货<br>订单完成</p></div>
+    </div>
+  </section>
+
+  <!-- 服务项目 -->
+  <section class="section" id="services">
+    <div class="sec-head fade-up"><span class="sec-label">服务项目</span><h2 class="sec-title">多种方案，满足不同需求</h2><p class="sec-desc">从日常小件到家具大件，我们都能为您服务</p></div>
+    <div class="services">
+      <div class="service fade-up"><div class="service-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div><div><h3>标准快递</h3><p>1-3天送达，全国覆盖，价格实惠，适合日常寄件</p></div></div>
+      <div class="service fade-up"><div class="service-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><div><h3>同城速递</h3><p>平均30分钟上门，2小时送达，专人直送，全程保价</p></div></div>
+      <div class="service fade-up"><div class="service-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.1c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><div><h3>当日达</h3><p>紧急文件、合同、发票等，当日寄当日到，专人专送</p></div></div>
+      <div class="service fade-up"><div class="service-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 12v4h2v3h4v-3h8v3h4v-3h2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg></div><div><h3>大件物流</h3><p>家具，家电等大件物品，专业包装，送货上楼</p></div></div>
+      <div class="service fade-up"><div class="service-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10 14 7h-4l-1 3"/><path d="M6 14h14l1-2-4-3h-5"/><path d="M6 10l-2 1c-1 .5-2 1.5-2 3 0 2 2 4 4 4h2"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/></svg></div><div><h3>电车托运</h3><p>电动车、摩托车托运服务，可随火车、飞机同行</p></div></div>
+      <div class="service fade-up"><div class="service-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h3>保价服务</h3><p>贵重物品可选保价，丢件损坏全额赔付，安全放心</p></div></div>
+    </div>
+  </section>
+
+  <!-- 客户评价 -->
+  <section class="section">
+    <div class="sec-head fade-up"><span class="sec-label">用户口碑</span><h2 class="sec-title">50万+ 用户的选择与信赖</h2><p class="sec-desc">真实体验，来自每一位寄件用户</p></div>
+    <div class="reviews">
+      <div class="review fade-up"><div class="stars">★★★★★</div><p>下单后不到20分钟骑手就上门了，速度真的快，全程都能看到物流进度，很安心。</p><div class="who"><span class="av">李</span><span>李先生<small>同城速递用户 · 深圳</small></span></div></div>
+      <div class="review fade-up"><div class="stars">★★★★★</div><p>寄了两台电动车跨省，包装得很专业，还送货上楼，比自己去物流园省心太多了。</p><div class="who"><span class="av">王</span><span>王女士<small>大件物流用户 · 杭州</small></span></div></div>
+      <div class="review fade-up"><div class="stars">★★★★★</div><p>客服响应很快，保价理赔流程也清楚，寄贵重物品终于放心了。</p><div class="who"><span class="av">陈</span><span>陈先生<small>保价服务用户 · 成都</small></span></div></div>
+    </div>
+  </section>
+
+  <!-- 扫码下载 -->
+  <section class="section" id="download">
+    <div class="sec-head fade-up"><span class="sec-label">立即体验</span><h2 class="sec-title">扫码使用服务</h2><p class="sec-desc">选择最适合您的寄件方式</p></div>
+    <div class="qr-grid">
+      <div class="qr-card fade-up"><div class="qr-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h3>小程序下单</h3><p>扫码进入寄件队长小程序<br>手机下单，即刻上门</p><div class="qr-frame"><img src="images/xcx.jpg" alt="小程序二维码" width="160" height="160" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#aab4cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>小程序码</div></div><p class="qr-hint">微信扫一扫 · 立即寄件</p></div>
+      <div class="qr-card fade-up"><div class="qr-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>关注公众号</h3><p>关注公众号获取最新优惠<br>物流动态实时推送</p><div class="qr-frame"><img src="images/gzh.jpg" alt="公众号二维码" width="160" height="160" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="qr-placeholder" style="display:none"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#aab4cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>公众号码</div></div><p class="qr-hint">微信扫一扫 · 关注我们</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="sec-head fade-up"><span class="sec-label">帮助中心</span><h2 class="sec-title">常见问题解答</h2></div>
+    <div class="faq-list">
+      <div class="faq-item fade-up open"><div class="faq-q" role="button" tabindex="0" aria-expanded="true"><div class="faq-ico">+</div><span>寄件需要提前预约吗？</span></div><div class="faq-ans">不需要预约，直接在小程序上下单，骑手平均30分钟内上门取件，无需等待。</div></div>
+      <div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-ico">+</div><span>如何联系在线客服？</span></div><div class="faq-ans">进入小程序后，点击右下角"客服"按钮即可在线咨询，工作时间8:00-22:00实时回复。也可以拨打客服热线19374966023。</div></div>
+      <div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-ico">+</div><span>电车托运是如何收费的？</span></div><div class="faq-ans">电车托运根据出发地和目的地距离、车辆型号等因素综合计价。小程序内输入车辆信息后会自动生成报价，全程无隐形费用。</div></div>
+      <div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-ico">+</div><span>大件物品如何收费？</span></div><div class="faq-ans">大件物品根据体积和重量计算费用，小程序内会自动报价。家具，家电等可享受送货上楼服务。</div></div>
+      <div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-ico">+</div><span>如果物品丢失或损坏怎么办？</span></div><div class="faq-ans">选择保价服务的订单，丢件或损坏可全额赔付。未保价订单根据运费的3-5倍进行赔偿。建议贵重物品寄件时选择保价服务。</div></div>
+      <div class="faq-item fade-up"><div class="faq-q" role="button" tabindex="0" aria-expanded="false"><div class="faq-ico">+</div><span>支持哪些支付方式？</span></div><div class="faq-ans">小程序支持微信支付、支付宝支付。寄件费用在骑手取件后自动扣款，收件人签收后运费结算完成。</div></div>
+    </div>
+  </section>
+
+  <!-- 底部 CTA -->
+  <section class="section" style="padding-top:0">
+    <div class="cta-band fade-up">
+      <h2>现在就寄，马上出发</h2>
+      <p>扫码下单 · 30 分钟上门 · 全程保价 · 安全送达</p>
+      <a href="#download" class="btn-primary">立即扫码下单</a>
+    </div>
+  </section>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-brand">寄件队长</div><p class="footer-desc">专业同城速递、跨城急送，大件物流平台，为您提供便捷、安全、可靠的寄件服务。</p></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>快捷链接</h4><a href="#how">如何使用</a><a href="#services">服务项目</a><a href="#download">立即体验</a><a href="#faq">常见问题</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a>客服热线：19374966023</a><a>工作时间：8:00-22:00</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 寄件队长快递服务平台 · page.imoons.cn</p>
+      <div class="footer-hotline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 全国服务热线：19374966023</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(function(e){io.observe(e)});
+  document.querySelector('.hero .hero-badge').classList.add('visible');
+  var burger=document.getElementById('navBurger'),drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay');
+  function closeAll(){drawer.classList.remove('open');burger.classList.remove('active');overlay.classList.remove('show');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','打开菜单')}
+  if(burger&&drawer&&overlay){
+    burger.addEventListener('click',function(){var open=drawer.classList.toggle('open');burger.classList.toggle('active',open);overlay.classList.toggle('show',open);burger.setAttribute('aria-expanded',open?'true':'false');burger.setAttribute('aria-label',open?'关闭菜单':'打开菜单')});
+    drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeAll)});
+    overlay.addEventListener('click',closeAll);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+  }
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){var item=q.closest('.faq-item');var open=item.classList.toggle('open');q.setAttribute('aria-expanded',open?'true':'false')});
+    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click()}});
+  });
+})();
+</script>
 </body>
 </html>
